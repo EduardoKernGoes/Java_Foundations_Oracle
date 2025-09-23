@@ -1,3 +1,4 @@
+package Secao_3;
 import java.util.Scanner;
 
 public class Aula_005 {
