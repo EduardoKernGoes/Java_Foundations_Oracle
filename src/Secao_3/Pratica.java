@@ -1,6 +1,5 @@
 package Secao_3;
 import javax.swing.JOptionPane;
-import java.text.DecimalFormat;
 
 public class Pratica {
     public static void main(String[] args) {
