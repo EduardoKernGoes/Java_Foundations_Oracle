@@ -1,6 +1,6 @@
 import java.util.Scanner;
-import javax.swing.JOptionPane;
-public class aula_005 {
+
+public class Aula_005 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
         /*
