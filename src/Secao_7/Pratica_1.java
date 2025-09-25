@@ -172,8 +172,16 @@ public class Pratica_1 {
                 //Jogar algo
                 case 4:
 
+                    //Solicita o nome do usuário para verificar o cartão
+                    System.out.println("\nDigite seu nome completo:");
+                    ler.nextLine();
+                    nome = ler.nextLine();
+
+                    //Busca as informações do usuário
+                    terminal.getInformacoesConta(nome);
+
                     //Pergunta ao usuário qual jogo ele deseja jogar
-                    System.out.println("\nSelecione o jogo que deseja jogar.");
+                    System.out.println("\n\nSelecione o jogo que deseja jogar.");
 
                     //Mostra os jogos disponíveis
                     terminal.getJogosDisponiveis();
@@ -187,7 +195,7 @@ public class Pratica_1 {
 
                     }
 
-                    terminal.getResultadoJogo(opcao2);
+                    terminal.getResultadoJogo(nome, opcao2);
 
                     System.out.println("\n\nO que deseja fazer agora?\n1.Criar um cartão novo\n2.Acessar um cartão existente" +
                             "\n3.Resgatar um prêmio\n4.Jogar algo\n5.Sair");

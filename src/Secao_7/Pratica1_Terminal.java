@@ -8,36 +8,216 @@ public class Pratica1_Terminal {
     private final Pratica1_Jogo jogo4 = new Pratica1_Jogo();
     private final Pratica1_Jogo jogo5 = new Pratica1_Jogo();
 
-    public void getResultadoJogo(int jogo){
+    public void getResultadoJogo(String nome, int jogo){
         switch (jogo){
 
             case 1:
 
-                System.out.println("Parabéns, você ganhou " + jogo1.resultadoJogo(400, 500) + " tickets.");
+                if(nome.equals(cartao1.verificaCartao())){
+                    if(cartao1.verificaSaldo() < jogo1.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo1.resultadoJogo(400, 500);
+                        cartao1.setRemoverSaldo(jogo1.getCusto());
+                        cartao1.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao1.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao1.getTickets();
+
+                    }
+                }else{
+
+                    if(cartao2.verificaSaldo() < jogo1.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo1.resultadoJogo(400, 500);
+                        cartao2.setRemoverSaldo(jogo1.getCusto());
+                        cartao2.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao2.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao2.getTickets();
+
+                    }
+
+                }
 
                 break;
 
             case 2:
 
-                System.out.println("Parabéns, você ganhou " + jogo2.resultadoJogo(100, 200) + " tickets.");
+                if(nome.equals(cartao1.verificaCartao())){
+                    if(cartao1.verificaSaldo() < jogo2.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo2.resultadoJogo(100, 200);
+                        cartao1.setRemoverSaldo(jogo2.getCusto());
+                        cartao1.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao1.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao1.getTickets();
+
+                    }
+                }else{
+
+                    if(cartao2.verificaSaldo() < jogo2.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo2.resultadoJogo(100, 200);
+                        cartao2.setRemoverSaldo(jogo2.getCusto());
+                        cartao2.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao2.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao2.getTickets();
+
+                    }
+
+                }
 
                 break;
 
             case 3:
 
-                System.out.println("Parabéns, você ganhou " + jogo3.resultadoJogo(200, 300) + " tickets.");
+                if(nome.equals(cartao1.verificaCartao())){
+                    if(cartao1.verificaSaldo() < jogo3.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo3.resultadoJogo(200, 300);
+                        cartao1.setRemoverSaldo(jogo3.getCusto());
+                        cartao1.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao1.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao1.getTickets();
+
+                    }
+                }else{
+
+                    if(cartao2.verificaSaldo() < jogo3.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo3.resultadoJogo(200, 300);
+                        cartao2.setRemoverSaldo(jogo3.getCusto());
+                        cartao2.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao2.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao2.getTickets();
+
+                    }
+
+                }
 
                 break;
 
             case 4:
 
-                System.out.println("Parabéns, você ganhou " + jogo4.resultadoJogo(300, 400) + " tickets.");
+                if(nome.equals(cartao1.verificaCartao())){
+                    if(cartao1.verificaSaldo() < jogo4.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo4.resultadoJogo(300, 400);
+                        cartao1.setRemoverSaldo(jogo4.getCusto());
+                        cartao1.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao1.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao1.getTickets();
+
+                    }
+                }else{
+
+                    if(cartao2.verificaSaldo() < jogo4.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo4.resultadoJogo(300, 400);
+                        cartao2.setRemoverSaldo(jogo4.getCusto());
+                        cartao2.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao2.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao2.getTickets();
+
+                    }
+
+                }
 
                 break;
 
             case 5:
 
-                System.out.println("Parabéns, você ganhou " + jogo5.resultadoJogo(200, 300) + " tickets.");
+                if(nome.equals(cartao1.verificaCartao())){
+                    if(cartao1.verificaSaldo() < jogo5.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo5.resultadoJogo(200, 300);
+                        cartao1.setRemoverSaldo(jogo5.getCusto());
+                        cartao1.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao1.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao1.getTickets();
+
+                    }
+                }else{
+
+                    if(cartao2.verificaSaldo() < jogo5.getCusto()){
+                        System.out.println("Você não tem saldo o suficiente para jogar este jogo," +
+                                " escolha outro ou compre mais créditos");
+                    }else{
+                        int resultado = jogo5.resultadoJogo(200, 300);
+                        cartao2.setRemoverSaldo(jogo5.getCusto());
+                        cartao2.setAdicionaTickets(resultado);
+                        System.out.println("Parabéns, você ganhou " + resultado + " tickets.");
+
+                        //Imprime as informações atualizadas
+                        System.out.print("\nInformações atualizadas:\nCréditos:");
+                        cartao2.getSaldo();
+                        System.out.print("\nTickets:");
+                        cartao2.getTickets();
+
+                    }
+
+                }
 
                 break;
 

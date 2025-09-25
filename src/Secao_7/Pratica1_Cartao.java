@@ -12,6 +12,10 @@ public class Pratica1_Cartao {
         cont++;
     }
 
+    public void setAdicionaTickets(int tickets) {
+        this.tickets += tickets;
+    }
+
     public void setAdicionarSaldo(int valor) {
         if (this.saldo == 1000 || (this.saldo + valor ) > 1000) {
             System.out.println("\n!Valor inválido!\nValor máximo de créditos do cartão: " + 1000 +

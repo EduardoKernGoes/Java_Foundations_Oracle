@@ -21,4 +21,8 @@ public class Pratica1_Jogo {
     public int resultadoJogo(int min, int max){
         return random.nextInt((max - min) + 1) + min;
     }
+
+    public int getCusto(){
+        return saldoNecessario;
+    }
 }
