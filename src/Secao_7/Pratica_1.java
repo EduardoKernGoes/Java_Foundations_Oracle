@@ -177,7 +177,17 @@ public class Pratica_1 {
 
                     //Mostra os jogos disponíveis
                     terminal.getJogosDisponiveis();
+                    opcao2 = ler.nextInt();
 
+                    //Garante que o usuário vá digitar números de 1 a 5
+                    while(opcao2 > 5 || opcao2 < 1) {
+
+                        System.out.println("!Opção Inválida!\nDigite uma opção válida (1-5):");
+                        opcao2 = ler.nextInt();
+
+                    }
+
+                    terminal.getResultadoJogo(opcao2);
 
                     System.out.println("\n\nO que deseja fazer agora?\n1.Criar um cartão novo\n2.Acessar um cartão existente" +
                             "\n3.Resgatar um prêmio\n4.Jogar algo\n5.Sair");

@@ -30,15 +30,15 @@ public class Pratica1_Cartao {
         }
     }
 
-    public void getNomeDono (String nomeDono) {
+    public void getNomeDono () {
         System.out.print(nomeDono);
     }
 
-    public void getSaldo (String nomeDono){
+    public void getSaldo (){
         System.out.print(saldo);
     }
 
-    public void getTickets(String nomeDono){
+    public void getTickets(){
         System.out.print(tickets);
     }
 

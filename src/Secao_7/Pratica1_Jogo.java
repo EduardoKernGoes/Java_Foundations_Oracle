@@ -1,7 +1,7 @@
 package Secao_7;
 import java.util.Random;
 public class Pratica1_Jogo {
-    private Random random = new Random();
+    private final Random random = new Random();
     private String nome;
     private int saldoNecessario;
 
@@ -16,5 +16,9 @@ public class Pratica1_Jogo {
 
     public void getSaldoNecessario(){
         System.out.print(this.saldoNecessario);
+    }
+
+    public int resultadoJogo(int min, int max){
+        return random.nextInt((max - min) + 1) + min;
     }
 }

@@ -1,12 +1,48 @@
 package Secao_7;
 public class Pratica1_Terminal {
-    private Pratica1_Cartao cartao1 = new Pratica1_Cartao();
-    private Pratica1_Cartao cartao2 = new Pratica1_Cartao();
-    private Pratica1_Jogo jogo1 = new Pratica1_Jogo();
-    private Pratica1_Jogo jogo2 = new Pratica1_Jogo();
-    private Pratica1_Jogo jogo3 = new Pratica1_Jogo();
-    private Pratica1_Jogo jogo4 = new Pratica1_Jogo();
-    private Pratica1_Jogo jogo5 = new Pratica1_Jogo();
+    private final Pratica1_Cartao cartao1 = new Pratica1_Cartao();
+    private final Pratica1_Cartao cartao2 = new Pratica1_Cartao();
+    private final Pratica1_Jogo jogo1 = new Pratica1_Jogo();
+    private final Pratica1_Jogo jogo2 = new Pratica1_Jogo();
+    private final Pratica1_Jogo jogo3 = new Pratica1_Jogo();
+    private final Pratica1_Jogo jogo4 = new Pratica1_Jogo();
+    private final Pratica1_Jogo jogo5 = new Pratica1_Jogo();
+
+    public void getResultadoJogo(int jogo){
+        switch (jogo){
+
+            case 1:
+
+                System.out.println("Parabéns, você ganhou " + jogo1.resultadoJogo(400, 500) + " tickets.");
+
+                break;
+
+            case 2:
+
+                System.out.println("Parabéns, você ganhou " + jogo2.resultadoJogo(100, 200) + " tickets.");
+
+                break;
+
+            case 3:
+
+                System.out.println("Parabéns, você ganhou " + jogo3.resultadoJogo(200, 300) + " tickets.");
+
+                break;
+
+            case 4:
+
+                System.out.println("Parabéns, você ganhou " + jogo4.resultadoJogo(300, 400) + " tickets.");
+
+                break;
+
+            case 5:
+
+                System.out.println("Parabéns, você ganhou " + jogo5.resultadoJogo(200, 300) + " tickets.");
+
+                break;
+
+        }
+    }
 
     //Instância os jogos
     public void setJogos(){
@@ -113,15 +149,15 @@ public class Pratica1_Terminal {
     //Exibi o saldo do cartão
     public void getSaldoCartao(String nomeDonoCartao){
         if(nomeDonoCartao.equals(cartao1.verificaCartao())){
-            cartao1.getSaldo(nomeDonoCartao);
+            cartao1.getSaldo();
         }else{
-            cartao2.getSaldo(nomeDonoCartao);
+            cartao2.getSaldo();
         }
     }
 
     //Exibi os tickets do cartão
     public void getTicketsCartao(String nomeDonoCartao){
-        cartao1.getTickets(nomeDonoCartao);
+        cartao1.getTickets();
     }
 
     //Exibi as informações do cartão
@@ -129,20 +165,20 @@ public class Pratica1_Terminal {
 
         if(nomeDonoCartao.equals(cartao1.verificaCartao())){
             System.out.print("\nBem vindo(a) ");
-            cartao1.getNomeDono(nomeDonoCartao);
+            cartao1.getNomeDono();
             System.out.print(", aqui estão as informações atualizadas sobre sua conta:");
             System.out.print("\nCréditos:");
-            cartao1.getSaldo(nomeDonoCartao);
+            cartao1.getSaldo();
             System.out.print("\nTickets: ");
-            cartao1.getTickets(nomeDonoCartao);
+            cartao1.getTickets();
         }else{
             System.out.print("\nBem vindo(a) ");
-            cartao2.getNomeDono(nomeDonoCartao);
+            cartao2.getNomeDono();
             System.out.print(", aqui estão as informações atualizadas sobre sua conta:");
             System.out.print("\nCréditos:");
-            cartao2.getSaldo(nomeDonoCartao);
+            cartao2.getSaldo();
             System.out.print("\nTickets: ");
-            cartao2.getTickets(nomeDonoCartao);
+            cartao2.getTickets();
         }
     }
 }
