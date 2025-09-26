@@ -1,4 +1,4 @@
-package Secao_7;
+package Sessao_7;
 import java.util.Scanner;
 public class Pratica_1 {
 

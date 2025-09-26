@@ -1,4 +1,4 @@
-package Secao_4;
+package Sessao_4;
 
 public class AuxilioAula001 {
     //Valor total de cada pessoa sem impostos/gorjeta

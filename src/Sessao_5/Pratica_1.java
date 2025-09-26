@@ -1,4 +1,4 @@
-package Secao_5;
+package Sessao_5;
 import java.util.Scanner;
 public class Pratica_1 {
     public static void main(String[] args) {

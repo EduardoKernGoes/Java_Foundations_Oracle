@@ -1,4 +1,4 @@
-package Secao_3;
+package Sessao_3;
 import javax.swing.JOptionPane;
 
 public class Pratica {

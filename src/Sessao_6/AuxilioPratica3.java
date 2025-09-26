@@ -1,4 +1,4 @@
-package Secao_6;
+package Sessao_6;
 
 public class AuxilioPratica3 {
 

@@ -1,4 +1,4 @@
-package Secao_7;
+package Sessao_7;
 public class Pratica1_Terminal {
     private final Pratica1_Cartao cartao1 = new Pratica1_Cartao();
     private final Pratica1_Cartao cartao2 = new Pratica1_Cartao();

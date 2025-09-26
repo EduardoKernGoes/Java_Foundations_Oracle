@@ -1,5 +1,4 @@
-package Secao_3;
-import javax.swing.JOptionPane;
+package Sessao_3;
 import java.util.Scanner;
 
 public class Aula_005 {

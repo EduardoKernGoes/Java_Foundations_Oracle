@@ -1,4 +1,4 @@
-package Secao_7;
+package Sessao_7;
 
 public class Pratica1_Premio {
     private String nome;

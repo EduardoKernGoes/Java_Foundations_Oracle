@@ -1,4 +1,4 @@
-package Secao_4;
+package Sessao_4;
 import java.util.Scanner;
 import java.lang.Math;
 import java.util.Random;

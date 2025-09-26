@@ -1,4 +1,4 @@
-package Secao_7;
+package Sessao_7;
 import java.util.Random;
 public class Pratica1_Jogo {
     private final Random random = new Random();
