@@ -6,6 +6,7 @@ public class Pratica_1 {
         Scanner ler = new Scanner(System.in);
         Pratica1_Terminal terminal =  new Pratica1_Terminal();
         terminal.setJogos();
+        terminal.setPremios();
         int contCartao = 1;
 
         //Inicia o programa
@@ -162,6 +163,30 @@ public class Pratica_1 {
                 //Resgatar um Prêmio
                 case 3:
 
+                    //Solicita o nome do usuário para verificar o cartão
+                    System.out.println("\nDigite seu nome completo:");
+                    ler.nextLine();
+                    nome = ler.nextLine();
+
+                    //Imprime as informações do usuário
+                    terminal.getInformacoesConta(nome);
+
+                    //Pergunta ao usuário qual prêmio ele quer resgatar
+                    System.out.println("\n\nSelecione o prêmio que deseja resgatar.");
+
+                    //Mostra os jogos disponíveis
+                    terminal.getPremiosDisponiveis();
+                    opcao2 = ler.nextInt();
+
+                    //Garante que o usuário vá digitar números de 1 a 5
+                    while(opcao2 > 5 || opcao2 < 1) {
+
+                        System.out.println("!Opção Inválida!\nDigite uma opção válida (1-5):");
+                        opcao2 = ler.nextInt();
+
+                    }
+
+                    terminal.getCompraPremio(nome, opcao2);
 
                     System.out.println("\n\nO que deseja fazer agora?\n1.Criar um cartão novo\n2.Acessar um cartão existente" +
                             "\n3.Resgatar um prêmio\n4.Jogar algo\n5.Sair");
@@ -177,7 +202,7 @@ public class Pratica_1 {
                     ler.nextLine();
                     nome = ler.nextLine();
 
-                    //Busca as informações do usuário
+                    //Imprime as informações do usuário
                     terminal.getInformacoesConta(nome);
 
                     //Pergunta ao usuário qual jogo ele deseja jogar

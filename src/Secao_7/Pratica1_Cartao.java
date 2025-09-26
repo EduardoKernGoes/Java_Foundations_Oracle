@@ -9,6 +9,7 @@ public class Pratica1_Cartao {
         int cont = 1;
         this.id = cont;
         this.nomeDono = nomeDono;
+        this.tickets = 1000000;
         cont++;
     }
 
@@ -34,6 +35,10 @@ public class Pratica1_Cartao {
         }
     }
 
+    public void setRemoverTickets(int valor) {
+        this.tickets -= valor;
+    }
+
     public void getNomeDono () {
         System.out.print(nomeDono);
     }
@@ -52,5 +57,9 @@ public class Pratica1_Cartao {
 
     public int verificaSaldo(){
         return this.saldo;
+    }
+
+    public int verificaTickets(){
+        return this.tickets;
     }
 }
