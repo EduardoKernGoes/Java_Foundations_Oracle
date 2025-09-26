@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Terminal terminal = new Terminal();
-        Temperaturas temperaturas = new Temperaturas();
         Scanner ler = new Scanner(System.in);
 
         //Cria um Array para armazenar as equipes
@@ -15,14 +14,14 @@ public class Main {
         terminal.mostraTimes();
 
         //Roda o programa enquanto não tiver 3 semanas seguidas de frio
-        while (temperaturas.retornaContTempMin() < 3){
+        while (terminal.retornaContTempMin() < 3){
 
             //Garante que o usuário irá digitar um valor válido
             try{
                 System.out.println("\nDigite a temperatura de hoje:");
                 int temp = ler.nextInt();
-                if (temperaturas.verificaTemperatura(temp) == 1){
-                    System.out.println("Hoje teremos as seguintes partidas:");
+                if (terminal.verificaTemperatura(temp) == 1){
+                    System.out.println("\nHoje tivemos as seguintes partidas:");
 
                     terminal.novaRodada(temp);
 
@@ -33,6 +32,6 @@ public class Main {
             }
         }
 
-        terminal.getPartidas();
+        terminal.getTemporada();
     }
 }

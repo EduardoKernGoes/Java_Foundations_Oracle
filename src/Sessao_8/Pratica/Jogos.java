@@ -20,15 +20,15 @@ public class Jogos {
         this.pontuacaoEM = pontuacaoEM;
         this.temperatura = temperatura;
 
-
     }
 
     public void getPartida(){
-        System.out.println("Identificação da partida: " + this.id);
-        System.out.println("Equipes da partida: " + this.equipeMandante + " " + golsEM +" x " + golsEV +" " +
+        System.out.println("\nIdentificação da partida: " + this.id);
+        System.out.println("Placar: " + this.equipeMandante + " " + golsEM +" x " + golsEV +" " +
                 this.equipeVisitante);
-        System.out.println("Pontuação ganhos: " + this.equipeMandante + " " + this.pontuacaoEM +
-                "\n                  " + this.equipeVisitante + " " + this.pontuacaoEV);
+        System.out.println("Pontuação ganha: " + this.equipeMandante + " " + this.pontuacaoEV +
+                "\n                 " + this.equipeVisitante + " " + this.pontuacaoEM);
         System.out.println("Temperatura: " + this.temperatura + "Cº");
+        System.out.println("\n#########################################");
     }
 }

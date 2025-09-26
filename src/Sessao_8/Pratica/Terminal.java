@@ -2,17 +2,43 @@ package Sessao_8.Pratica;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
-
 public class Terminal {
     private List<Jogos> jogos = new ArrayList<>();
     private Equipes[] times =  new Equipes[4];
     private Random random = new Random();
+    private Temperaturas temperaturas = new Temperaturas();
     private static int proximoID;
+    private int maiorTemperatura = 0;
+    private int totalTemperatura;
+    private int contTemperatura = 0;
 
-    public void getPartidas(){
+    public void getTemporada(){
+        System.out.println("\nEsses foram os jogos desta temporada:");
         for(int i = 0; i < jogos.toArray().length; i++){
             jogos.get(i).getPartida();
         }
+        System.out.println("\nMaior temperatura da temporada: " + this.retornaMaiorTemperatura() + "Cº");
+        System.out.println("\nTemperatura média da temporada: " + (this.totalTemperatura / this.contTemperatura)
+                + "Cº");
+    }
+
+    public int retornaContTempMin(){
+        return this.temperaturas.retornaContTempMin();
+    }
+
+    public int verificaTemperatura(int temp){
+
+        if (temp > this.maiorTemperatura) {
+            this.maiorTemperatura = temp;
+            this.contTemperatura += 1;
+            this.totalTemperatura += temp;
+        }
+
+        return this.temperaturas.verificaTemperatura(temp);
+    }
+
+    private int retornaMaiorTemperatura() {
+        return this.maiorTemperatura;
     }
 
     public void mostraTimes(){
@@ -100,6 +126,9 @@ public class Terminal {
         Jogos partida2 = new Jogos();
         partida2.setPartida(proximoID++, times[num3].getNome(), times[num4].getNome(), golsNum3, golsNum4, pontosNum3, pontosNum4, temp);
         this.jogos.add(partida2);
+
+        partida1.getPartida();
+        partida2.getPartida();
     }
 
     private int verificaPontuacao(int golsTime1, int golsTime2){
