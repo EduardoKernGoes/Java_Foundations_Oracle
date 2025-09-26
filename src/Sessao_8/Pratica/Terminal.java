@@ -17,6 +17,12 @@ public class Terminal {
         for(int i = 0; i < jogos.toArray().length; i++){
             jogos.get(i).getPartida();
         }
+        System.out.println("\nEstatísticas finais de cada time: ");
+
+        for(int i = 0; i < times.length; i++){
+            times[i].getEstatisticas();
+        }
+
         System.out.println("\nMaior temperatura da temporada: " + this.retornaMaiorTemperatura() + "Cº");
         System.out.println("\nTemperatura média da temporada: " + (this.totalTemperatura / this.contTemperatura)
                 + "Cº");

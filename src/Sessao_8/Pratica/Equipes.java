@@ -36,5 +36,13 @@ public class Equipes {
         return this.nome;
     }
 
-
+    public void getEstatisticas(){
+        System.out.println(this.nome);
+        System.out.println("    Vitórias: " + this.vitorias);
+        System.out.println("    Derrotas: " + this.derrotas);
+        System.out.println("    Empates: " + this.empates);
+        System.out.println("    Gols marcados: " + this.golsMarcados);
+        System.out.println("    Gols sofridos: " + this.golsSofridos);
+        System.out.println("    Pontuação final: " + this.pontos);
+    }
 }
