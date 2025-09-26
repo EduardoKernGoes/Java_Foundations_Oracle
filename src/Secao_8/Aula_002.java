@@ -2,6 +2,8 @@ package Secao_8;
 import java.util.ArrayList;
 public class Aula_002 {
     public static void main(String[] args) {
+        //Exemplo 1
+        /*
         ArrayList<String> nomes = new ArrayList<>();
 
         System.out.println(nomes);
@@ -26,5 +28,16 @@ public class Aula_002 {
         nomes.remove("José");
 
         System.out.println(nomes);
+         */
+
+        //Exemplo 2
+        ArrayList<Integer> nums = new ArrayList<>();
+        for (int i = 1; i < 50; i++){
+            nums.add(i);
+        }
+
+        for(Integer i: nums){
+            System.out.println(i);
+        }
     }
 }
