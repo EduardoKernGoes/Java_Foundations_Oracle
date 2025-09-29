@@ -1,9 +1,10 @@
 package Sessao_9;
 import javafx.application.Application;
 import javafx.event.*;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class Aula_001 extends Application {
@@ -16,7 +17,18 @@ public class Aula_001 extends Application {
 
         //Botões são como objetos podem ser instanciados, contêm campos e contêm métodos
         Button btn = new Button();
-        btn.setText("Say 'HelloWorld'");
+        Button btn2 = new Button();
+        Button btn3 = new Button();
+        Button btn4 = new Button();
+        Button btn5 = new Button();
+
+        btn.setText("Say 'He");
+        btn2.setText("ll");
+        btn3.setText("oW");
+        btn4.setText("or");
+        btn5.setText("ld'");
+
+        //Faz a interação do botão, o que vai acontecer se eu clicar nele
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -25,10 +37,15 @@ public class Aula_001 extends Application {
             }
         });
 
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        HBox root = new HBox();
+        Group group = new Group();
+        group.getChildren().add(root);
+        root.getChildren().addAll(btn, btn2, btn3, btn4, btn5);
 
-        Scene scene = new Scene(root, 300, 250);
+
+        Scene scene = new Scene(group, 300, 300);
+
+        group.setLayoutY((scene.getHeight() - 30));
 
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
