@@ -46,10 +46,10 @@ public class Locais {
             descricao.setX(curva / 2 - 15);
             descricao.setY(curva / 2 + 10);
 
-            Group dormNode = new Group();
-            dormNode.getChildren().addAll(park1, descricao);
+            Group parkNode = new Group();
+            parkNode.getChildren().addAll(park1, descricao);
 
-            return dormNode;
+            return parkNode;
 
         }else if (num == 2){
 
@@ -69,10 +69,10 @@ public class Locais {
             descricao.setX(curva + (curva / 2) - 30);
             descricao.setY(curva + (curva / 2) + 10);
 
-            Group dormNode = new Group();
-            dormNode.getChildren().addAll(park2, descricao);
+            Group parkNode = new Group();
+            parkNode.getChildren().addAll(park2, descricao);
 
-            return dormNode;
+            return parkNode;
 
         }else if (num == 3){
 
@@ -92,10 +92,10 @@ public class Locais {
             descricao.setX(curva + (curva / 2) - 30);
             descricao.setY(curva / 2 + 10);
 
-            Group dormNode = new Group();
-            dormNode.getChildren().addAll(park3, descricao);
+            Group parkNode = new Group();
+            parkNode.getChildren().addAll(park3, descricao);
 
-            return dormNode;
+            return parkNode;
         }else{
 
             park4.getElements().addAll(
@@ -114,10 +114,10 @@ public class Locais {
             descricao.setX(curva / 2 - 15);
             descricao.setY(curva + (curva / 2) + 10);
 
-            Group dormNode = new Group();
-            dormNode.getChildren().addAll(park4, descricao);
+            Group parkNode = new Group();
+            parkNode.getChildren().addAll(park4, descricao);
 
-            return dormNode;
+            return parkNode;
         }
     }
 
@@ -136,6 +136,7 @@ public class Locais {
             Group dormNode = new Group();
             dormNode.getChildren().addAll(dorm1, descricao);
 
+            acaoMouse(dormNode, "dorm1");
             return dormNode;
         }else if (num == 2){
             descricao.setFont(new Font("Arial", 20));
@@ -149,6 +150,7 @@ public class Locais {
             Group dormNode = new Group();
             dormNode.getChildren().addAll(dorm2, descricao);
 
+            acaoMouse(dormNode, "dorm2");
             return dormNode;
         }else if (num == 3){
 
@@ -160,6 +162,7 @@ public class Locais {
             Group dormNode = new Group();
             dormNode.getChildren().addAll(dorm3, descricao);
 
+            acaoMouse(dormNode, "dorm3");
             return dormNode;
         }else if  (num == 4){
 
@@ -174,6 +177,7 @@ public class Locais {
 
             dorm4.setFill(Color.DIMGREY);
 
+            acaoMouse(dormNode, "dorm4");
             return dormNode;
         }else{
 
@@ -185,6 +189,7 @@ public class Locais {
             Group dormNode = new Group();
             dormNode.getChildren().addAll(dorm5, descricao);
 
+            acaoMouse(dormNode, "dorm5");
             return dormNode;
         }
     }
@@ -202,5 +207,15 @@ public class Locais {
         areaCentralNode.getChildren().addAll(areaCentral, descricao);
 
         return areaCentralNode;
+    }
+
+    private void acaoMouse(Group node, String local){
+        node.setOnMouseClicked(event -> {
+            adicionarInformacoes(local);
+        });
+    }
+
+    private void adicionarInformacoes(String local){
+        System.out.println(local);
     }
 }
