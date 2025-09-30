@@ -27,7 +27,8 @@ public class Locais {
     private Rectangle dorm5 = new Rectangle(200, 80, Color.DIMGREY);
     private Circle areaCentral = new Circle(100, Color.SADDLEBROWN);
     private Path park1 = new Path(), park2 = new Path(),  park3 = new Path(), park4 = new Path();
-    private int qntAlunosDorm1, qntAlunosDorm2, qntAlunosDorm3, qntAlunosDorm4,  qntAlunosDorm5;
+    private Text alunosDorm1 = new Text(), alunosDorm2 = new Text(), alunosDorm3 = new Text(),
+            alunosDorm4 = new Text(),  alunosDorm5 = new Text();
 
     public Node getParks(int num){
         Text descricao = new Text();
@@ -135,20 +136,26 @@ public class Locais {
         descricao.setFont(new Font("Arial", 20));
 
         if (num == 1){
-            descricao.setFont(new Font("Arial", 20));
+
+            alunosDorm1 = new Text("Alunos: ");
 
             descricao.setText("Dormitório 1");
 
             descricao.setX(100 - (descricao.getLayoutBounds().getWidth() / 2));
             descricao.setY(45);
 
+            alunosDorm1.setX(100 - (alunosDorm1.getLayoutBounds().getWidth() / 2));
+            alunosDorm1.setY(60);
+
             Group dormNode = new Group();
-            dormNode.getChildren().addAll(dorm1, descricao);
+            dormNode.getChildren().addAll(dorm1, descricao, alunosDorm1);
 
             acaoMouse(dormNode, "dorm1");
             return dormNode;
+
         }else if (num == 2){
-            descricao.setFont(new Font("Arial", 20));
+
+            alunosDorm2 = new Text("Alunos: ");
 
             descricao.setText("Dormitório 2");
 
@@ -156,24 +163,37 @@ public class Locais {
             descricao.setY(115 - (descricao.getLayoutBounds().getHeight() / 2));
             descricao.setRotate(90);
 
+            alunosDorm2.setX(0);
+            alunosDorm2.setY(115 - (descricao.getLayoutBounds().getHeight() / 2));
+            alunosDorm2.setRotate(90);
+
             Group dormNode = new Group();
-            dormNode.getChildren().addAll(dorm2, descricao);
+            dormNode.getChildren().addAll(dorm2, descricao, alunosDorm2);
 
             acaoMouse(dormNode, "dorm2");
             return dormNode;
+
         }else if (num == 3){
+
+            alunosDorm3 = new Text("Alunos: ");
 
             descricao.setText("Dormitório 3");
 
             descricao.setX(45);
             descricao.setY(100 - (descricao.getLayoutBounds().getWidth() / 2));
 
+            alunosDorm3.setX(100 - (alunosDorm3.getLayoutBounds().getWidth() / 2));
+            alunosDorm3.setY(60);
+
             Group dormNode = new Group();
-            dormNode.getChildren().addAll(dorm3, descricao);
+            dormNode.getChildren().addAll(dorm3, descricao, alunosDorm3);
 
             acaoMouse(dormNode, "dorm3");
             return dormNode;
+
         }else if  (num == 4){
+
+            alunosDorm4 = new Text("Alunos: ");
 
             descricao.setText("Dormitório 4");
 
@@ -181,22 +201,32 @@ public class Locais {
             descricao.setY(155 - (descricao.getLayoutBounds().getWidth() / 2));
             descricao.setRotate(-46);
 
+            alunosDorm4.setX(95);
+            alunosDorm4.setY(165 - (descricao.getLayoutBounds().getWidth() / 2));
+            alunosDorm4.setRotate(-46);
+
             Group dormNode = new Group();
-            dormNode.getChildren().addAll(dorm4, descricao);
+            dormNode.getChildren().addAll(dorm4, descricao, alunosDorm4);
 
             dorm4.setFill(Color.DIMGREY);
 
             acaoMouse(dormNode, "dorm4");
             return dormNode;
+
         }else{
+
+            alunosDorm5 = new Text("Alunos: ");
 
             descricao.setText("Dormitório 5");
 
             descricao.setX(45);
             descricao.setY(100 - (descricao.getLayoutBounds().getWidth() / 2));
 
+            alunosDorm5.setX(100 - (alunosDorm5.getLayoutBounds().getWidth() / 2));
+            alunosDorm5.setY(60);
+
             Group dormNode = new Group();
-            dormNode.getChildren().addAll(dorm5, descricao);
+            dormNode.getChildren().addAll(dorm5, descricao, alunosDorm5);
 
             acaoMouse(dormNode, "dorm5");
             return dormNode;
@@ -237,7 +267,7 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    qntAlunosDorm1 = Integer.parseInt(alunos.getText());
+                    alunosDorm1.setText("Alunos: " + Integer.parseInt(alunos.getText()));
 
                     informacoes.close();
                 }catch (NumberFormatException e){
@@ -254,7 +284,7 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    qntAlunosDorm2 = Integer.parseInt(alunos.getText());
+                    alunosDorm2.setText("Alunos: " + Integer.parseInt(alunos.getText()));
 
                     informacoes.close();
                 }catch (NumberFormatException e){
@@ -271,7 +301,7 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    qntAlunosDorm3 = Integer.parseInt(alunos.getText());
+                    alunosDorm3.setText("Alunos: " + Integer.parseInt(alunos.getText()));
 
                     informacoes.close();
                 }catch (NumberFormatException e){
@@ -288,7 +318,7 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    qntAlunosDorm4 = Integer.parseInt(alunos.getText());
+                    alunosDorm4.setText("Alunos: " + Integer.parseInt(alunos.getText()));
 
                     informacoes.close();
                 }catch (NumberFormatException e){
@@ -305,7 +335,7 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    qntAlunosDorm5 = Integer.parseInt(alunos.getText());
+                    alunosDorm5.setText("Alunos: " + Integer.parseInt(alunos.getText()));
 
                     informacoes.close();
                 }catch (NumberFormatException e){
