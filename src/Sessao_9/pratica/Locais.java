@@ -29,6 +29,68 @@ public class Locais {
     private Path park1 = new Path(), park2 = new Path(),  park3 = new Path(), park4 = new Path();
     private Text alunosDorm1 = new Text(), alunosDorm2 = new Text(), alunosDorm3 = new Text(),
             alunosDorm4 = new Text(),  alunosDorm5 = new Text();
+    private int qntAlunosDorm1, qntAlunosDorm2, qntAlunosDorm3, qntAlunosDorm4,  qntAlunosDorm5;
+    private Circle centroEstudos = new Circle(10, Color.RED);
+
+    private void atualizarCentroEstudos() {
+
+        double[] pesos = {qntAlunosDorm1, qntAlunosDorm2, qntAlunosDorm3, qntAlunosDorm4, qntAlunosDorm5};
+        double somaPesos = qntAlunosDorm1 + qntAlunosDorm2 + qntAlunosDorm3 + qntAlunosDorm4 + qntAlunosDorm5;
+        double[] coordsX = {230, 50, 480, 570, 110};
+        double[] coordsY = {50, 230, 50, 520, 600};
+        double centroMassaX = 0;
+        double centroMassaY = 0;
+        double totalPesos = qntAlunosDorm1 +  qntAlunosDorm2 + qntAlunosDorm3 +  qntAlunosDorm4 + qntAlunosDorm5;
+
+
+        if (somaPesos > 0) {
+            for (int i = 0; i < pesos.length; i++) {
+                centroMassaX += coordsX[i] * pesos[i];
+                centroMassaY += coordsY[i] * pesos[i];
+            }
+            centroMassaX /= somaPesos;
+            centroMassaY /= somaPesos;
+        } else {
+            centroMassaX = (coordsX[0] + coordsX[1] + coordsX[2] + coordsX[3] + coordsX[4]) / 5.0;
+            centroMassaY = (coordsY[0] + coordsY[1] + coordsY[2] + coordsY[3] + coordsY[4]) / 5.0;
+        }
+
+        centroEstudos.setLayoutX(centroMassaX - centroEstudos.getRadius());
+        centroEstudos.setLayoutY(centroMassaY - centroEstudos.getRadius());
+    }
+
+    public Node getCentroestudos(){
+
+        double[] pesos = {qntAlunosDorm1, qntAlunosDorm2, qntAlunosDorm3, qntAlunosDorm4, qntAlunosDorm5};
+        double somaPesos = qntAlunosDorm1 + qntAlunosDorm2 + qntAlunosDorm3 + qntAlunosDorm4 + qntAlunosDorm5;
+        double[] coordsX = {230, 50, 480, 570, 110};
+        double[] coordsY = {50, 230, 50, 520, 600};
+        double centroMassaX = 0;
+        double centroMassaY = 0;
+        double totalPesos = qntAlunosDorm1 +  qntAlunosDorm2 + qntAlunosDorm3 +  qntAlunosDorm4 + qntAlunosDorm5;
+
+
+        if (totalPesos > 0){
+            for (int i = 0; i < pesos.length; i++){
+                centroMassaX += coordsX[i] * pesos[i];
+                centroMassaY += coordsY[i] * pesos[i];
+            }
+            centroMassaX /= totalPesos;
+            centroMassaY /= totalPesos;
+        }else{
+            for (int i = 0; i < pesos.length; i++){
+                centroMassaX += coordsX[i];
+                centroMassaY += coordsY[i];
+            }
+            centroMassaX /= (pesos.length + 1);
+            centroMassaY /= (pesos.length + 1);
+        }
+
+        centroEstudos.setLayoutX(centroMassaX - centroEstudos.getRadius());
+        centroEstudos.setLayoutY(centroMassaY - centroEstudos.getRadius());
+
+        return centroEstudos;
+    }
 
     public Node getParks(int num){
         Text descricao = new Text();
@@ -137,7 +199,7 @@ public class Locais {
 
         if (num == 1){
 
-            alunosDorm1 = new Text("Alunos: ");
+            alunosDorm1 = new Text("Alunos: " + qntAlunosDorm1);
 
             descricao.setText("Dormitório 1");
 
@@ -155,7 +217,7 @@ public class Locais {
 
         }else if (num == 2){
 
-            alunosDorm2 = new Text("Alunos: ");
+            alunosDorm2 = new Text("Alunos: " + qntAlunosDorm2);
 
             descricao.setText("Dormitório 2");
 
@@ -175,7 +237,7 @@ public class Locais {
 
         }else if (num == 3){
 
-            alunosDorm3 = new Text("Alunos: ");
+            alunosDorm3 = new Text("Alunos: " +  qntAlunosDorm3);
 
             descricao.setText("Dormitório 3");
 
@@ -193,7 +255,7 @@ public class Locais {
 
         }else if  (num == 4){
 
-            alunosDorm4 = new Text("Alunos: ");
+            alunosDorm4 = new Text("Alunos: " + qntAlunosDorm4);
 
             descricao.setText("Dormitório 4");
 
@@ -215,7 +277,7 @@ public class Locais {
 
         }else{
 
-            alunosDorm5 = new Text("Alunos: ");
+            alunosDorm5 = new Text("Alunos: " + qntAlunosDorm5);
 
             descricao.setText("Dormitório 5");
 
@@ -267,7 +329,11 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    alunosDorm1.setText("Alunos: " + Integer.parseInt(alunos.getText()));
+                    qntAlunosDorm1 = Integer.parseInt(alunos.getText());
+
+                    alunosDorm1.setText("Alunos: " + qntAlunosDorm1);
+
+                    atualizarCentroEstudos();
 
                     informacoes.close();
                 }catch (NumberFormatException e){
@@ -284,7 +350,11 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    alunosDorm2.setText("Alunos: " + Integer.parseInt(alunos.getText()));
+                    qntAlunosDorm2 = Integer.parseInt(alunos.getText());
+
+                    alunosDorm2.setText("Alunos: " + qntAlunosDorm2);
+
+                    atualizarCentroEstudos();
 
                     informacoes.close();
                 }catch (NumberFormatException e){
@@ -301,7 +371,11 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    alunosDorm3.setText("Alunos: " + Integer.parseInt(alunos.getText()));
+                    qntAlunosDorm3 = Integer.parseInt(alunos.getText());
+
+                    alunosDorm3.setText("Alunos: " + qntAlunosDorm3);
+
+                    atualizarCentroEstudos();
 
                     informacoes.close();
                 }catch (NumberFormatException e){
@@ -318,7 +392,11 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    alunosDorm4.setText("Alunos: " + Integer.parseInt(alunos.getText()));
+                    qntAlunosDorm4 = Integer.parseInt(alunos.getText());
+
+                    alunosDorm4.setText("Alunos: " + qntAlunosDorm4);
+
+                    atualizarCentroEstudos();
 
                     informacoes.close();
                 }catch (NumberFormatException e){
@@ -335,7 +413,11 @@ public class Locais {
 
             salvar.setOnAction(event -> {
                 try {
-                    alunosDorm5.setText("Alunos: " + Integer.parseInt(alunos.getText()));
+                    qntAlunosDorm5 = Integer.parseInt(alunos.getText());
+
+                    alunosDorm5.setText("Alunos: " + qntAlunosDorm5);
+
+                    atualizarCentroEstudos();
 
                     informacoes.close();
                 }catch (NumberFormatException e){

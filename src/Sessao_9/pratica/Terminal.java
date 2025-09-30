@@ -10,12 +10,12 @@ public class Terminal extends Application {
     private Group group;
     private Scene scene;
     private Locais locais;
-    private Node dorm1, dorm2, dorm3, dorm4, dorm5, areaCentral, park1, park2, park3, park4;
+    private Node dorm1, dorm2, dorm3, dorm4, dorm5, areaCentral, park1, park2, park3, park4, centroEstudos;
 
     public void start (Stage primeiroStage){
         iniciaObjetos();
 
-        group.getChildren().addAll(dorm1, dorm2, dorm3, dorm4, dorm5, areaCentral, park1, park2, park3, park4);
+        group.getChildren().addAll(dorm1, dorm2, dorm3, dorm4, dorm5, areaCentral, park1, park2, park3, park4, centroEstudos);
 
         posicaoObjetos();
 
@@ -70,6 +70,7 @@ public class Terminal extends Application {
         park2 = locais.getParks(2);
         park3 = locais.getParks(3);
         park4 = locais.getParks(4);
+        centroEstudos = locais.getCentroestudos();
     }
 
     public void iniciar (String[] args){
