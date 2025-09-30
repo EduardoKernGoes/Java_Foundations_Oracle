@@ -1,10 +1,18 @@
 package Sessao_9.pratica;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class Locais {
     private Rectangle dorm1 = new Rectangle(200, 80, Color.DIMGREY);
@@ -19,6 +27,7 @@ public class Locais {
     private Rectangle dorm5 = new Rectangle(200, 80, Color.DIMGREY);
     private Circle areaCentral = new Circle(100, Color.SADDLEBROWN);
     private Path park1 = new Path(), park2 = new Path(),  park3 = new Path(), park4 = new Path();
+    private int qntAlunosDorm1, qntAlunosDorm2, qntAlunosDorm3, qntAlunosDorm4,  qntAlunosDorm5;
 
     public Node getParks(int num){
         Text descricao = new Text();
@@ -216,6 +225,107 @@ public class Locais {
     }
 
     private void adicionarInformacoes(String local){
-        System.out.println(local);
+        Stage informacoes = new Stage();
+        TextField alunos = new TextField();
+        Button salvar = new Button("Salvar");
+        Text titulo =  new Text("Quantos alunos há neste dormitório?");
+        VBox root = new VBox(10);
+        Scene infoScene = new Scene(root, 300, 150);
+
+        if (local.equals("dorm1")){
+            informacoes.setTitle("Inf. Dormitório 1");
+
+            salvar.setOnAction(event -> {
+                try {
+                    qntAlunosDorm1 = Integer.parseInt(alunos.getText());
+
+                    informacoes.close();
+                }catch (NumberFormatException e){
+                    Text erro = new Text("Valor inválido! Digite apenas números.");
+
+                    erro.setFill(Color.RED);
+
+                    root.getChildren().add(erro);
+                }
+            });
+
+        }else if (local.equals("dorm2")){
+            informacoes.setTitle("Inf. Dormitório 2");
+
+            salvar.setOnAction(event -> {
+                try {
+                    qntAlunosDorm2 = Integer.parseInt(alunos.getText());
+
+                    informacoes.close();
+                }catch (NumberFormatException e){
+                    Text erro = new Text("Valor inválido! Digite apenas números.");
+
+                    erro.setFill(Color.RED);
+
+                    root.getChildren().add(erro);
+                }
+            });
+
+        }else if (local.equals("dorm3")){
+            informacoes.setTitle("Inf. Dormitório 3");
+
+            salvar.setOnAction(event -> {
+                try {
+                    qntAlunosDorm3 = Integer.parseInt(alunos.getText());
+
+                    informacoes.close();
+                }catch (NumberFormatException e){
+                    Text erro = new Text("Valor inválido! Digite apenas números.");
+
+                    erro.setFill(Color.RED);
+
+                    root.getChildren().add(erro);
+                }
+            });
+
+        }else if (local.equals("dorm4")){
+            informacoes.setTitle("Inf. Dormitório 4");
+
+            salvar.setOnAction(event -> {
+                try {
+                    qntAlunosDorm4 = Integer.parseInt(alunos.getText());
+
+                    informacoes.close();
+                }catch (NumberFormatException e){
+                    Text erro = new Text("Valor inválido! Digite apenas números.");
+
+                    erro.setFill(Color.RED);
+
+                    root.getChildren().add(erro);
+                }
+            });
+
+        }else if (local.equals("dorm5")){
+            informacoes.setTitle("Inf. Dormitório 5");
+
+            salvar.setOnAction(event -> {
+                try {
+                    qntAlunosDorm5 = Integer.parseInt(alunos.getText());
+
+                    informacoes.close();
+                }catch (NumberFormatException e){
+                    Text erro = new Text("Valor inválido! Digite apenas números.");
+
+                    erro.setFill(Color.RED);
+
+                    root.getChildren().add(erro);
+                }
+            });
+
+        }
+
+
+        alunos.setPromptText("Alunos");
+
+        root.getChildren().addAll(titulo, alunos, salvar);
+        root.setPadding(new Insets(20));
+
+        informacoes.setScene(infoScene);
+        informacoes.show();
     }
 }
